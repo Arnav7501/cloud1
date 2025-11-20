@@ -114,6 +114,34 @@
           "identifier": "https://project-resources.gdevelop.io/e2656098-95c4-4859-88ab-d90ee30fe938/resources/d4ddba1c5f187a151fd7fa7c221376548fe02b865a9cb9718938dbfab1b1890c-cloud-removebg-preview.png",
           "name": "cloud-project-resource"
         }
+      },
+      {
+        "file": "Sky.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Sky.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "CarDriving.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "CarDriving.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "Fashion EDM Technology by Infraction [No Copyright Music] Endless Sunrise.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Fashion EDM Technology by Infraction [No Copyright Music] Endless Sunrise.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
