@@ -63,14 +63,14 @@
       "angle": 357,
       "customSize": true,
       "depth": 1,
-      "height": 882,
+      "height": 889,
       "keepRatio": true,
       "layer": "Background",
       "name": "Background",
       "persistentUuid": "245a8996-5637-4b62-a3c6-edd0dc06012e",
-      "width": 1316,
+      "width": 1326,
       "x": -20,
-      "y": -33,
+      "y": -37,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -418,7 +418,7 @@
             "Fashion EDM Technology by Infraction [No Copyright Music] Endless Sunrise.mp3",
             "2",
             "yes",
-            "35",
+            "25",
             "1"
           ]
         }
@@ -448,7 +448,7 @@
             "CarDriving.mp3",
             "1",
             "",
-            "20",
+            "5",
             "1"
           ]
         }
