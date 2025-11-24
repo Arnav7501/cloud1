@@ -142,6 +142,70 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "lightning.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "lightning.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "wind.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "wind.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "wind-removebg-preview.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "wind-removebg-preview.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "pngimg.com - sun_PNG13446.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pngimg.com - sun_PNG13446.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "pngimg.com - sun_PNG13441.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pngimg.com - sun_PNG13441.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview2.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -151,7 +215,13 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "cloudSpawningRate",
+      "type": "number",
+      "value": 1
+    }
+  ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

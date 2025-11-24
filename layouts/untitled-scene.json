@@ -23,7 +23,18 @@
     "selectedLayer": "Background"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "lastCloudX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "lastCloudY",
+      "type": "number",
+      "value": 0
+    }
+  ],
   "instances": [
     {
       "angle": 90,
@@ -43,23 +54,6 @@
       "initialVariables": []
     },
     {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 241,
-      "keepRatio": true,
-      "layer": "",
-      "name": "NewSprite",
-      "persistentUuid": "7b781a67-9060-4e86-98ac-8c5cf89edf93",
-      "width": 252,
-      "x": 407,
-      "y": 77,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
       "angle": 357,
       "customSize": true,
       "depth": 1,
@@ -72,6 +66,57 @@
       "x": -20,
       "y": -37,
       "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 321,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "lightning",
+      "persistentUuid": "fd49c154-a875-4117-abfd-20ee38a1fbec",
+      "width": 324,
+      "x": 892,
+      "y": 469,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 269,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "wind",
+      "persistentUuid": "9d3aebb6-7ee8-448d-b576-11bb0c191193",
+      "width": 227,
+      "x": 472,
+      "y": 473,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 244,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "sun",
+      "persistentUuid": "fe681235-6ed0-4f7e-aad3-33b8dd3bba44",
+      "width": 218,
+      "x": 112,
+      "y": 488,
+      "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -257,6 +302,198 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "lightning",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "lightning.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 14,
+                        "y": 0
+                      },
+                      {
+                        "x": 504,
+                        "y": 0
+                      },
+                      {
+                        "x": 504,
+                        "y": 317
+                      },
+                      {
+                        "x": 14,
+                        "y": 317
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "wind",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "windActive",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "wind-removebg-preview.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 94
+                      },
+                      {
+                        "x": 500,
+                        "y": 94
+                      },
+                      {
+                        "x": 500,
+                        "y": 406
+                      },
+                      {
+                        "x": 0,
+                        "y": 406
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "sun",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "sunVariable",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 13,
+                        "y": 17
+                      },
+                      {
+                        "x": 485,
+                        "y": 17
+                      },
+                      {
+                        "x": 485,
+                        "y": 480
+                      },
+                      {
+                        "x": 13,
+                        "y": 480
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -266,10 +503,19 @@
         "objectName": "racer"
       },
       {
+        "objectName": "lightning"
+      },
+      {
         "objectName": "NewSprite"
       },
       {
         "objectName": "Background"
+      },
+      {
+        "objectName": "wind"
+      },
+      {
+        "objectName": "sun"
       }
     ]
   },
@@ -314,7 +560,7 @@
           "parameters": [
             "racer",
             "=",
-            "lerp(racer.Y(), NewSprite.Y(), 0.05)"
+            "lerp(racer.Y(), NewSprite.Y(), 0.2)"
           ]
         }
       ]
@@ -348,7 +594,7 @@
             "",
             "\"cloudspawn\"",
             ">=",
-            "1"
+            "cloudSpawningRate"
           ]
         }
       ],
@@ -361,7 +607,7 @@
             "",
             "NewSprite",
             "racer.X() + 15",
-            "RandomInRange(150, 400)",
+            "racer.Y() + RandomInRange(-100, 100)",
             ""
           ]
         },
@@ -453,6 +699,187 @@
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SourisSurObjet"
+          },
+          "parameters": [
+            "wind",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"Left\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "wind",
+            "windActive",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "sun",
+            "sunVariable",
+            "=",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberObjectVariable"
+          },
+          "parameters": [
+            "wind",
+            "windActive",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "racer",
+            "180",
+            "100",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "cloudSpawningRate",
+            "=",
+            "2.5"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberObjectVariable"
+          },
+          "parameters": [
+            "sun",
+            "sunVariable",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "racer",
+            "0",
+            "400",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SourisSurObjet"
+          },
+          "parameters": [
+            "sun",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"Left\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "sun",
+            "sunVariable",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "wind",
+            "windActive",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "cloudSpawningRate",
+            "=",
+            "0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
