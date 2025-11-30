@@ -45,6 +45,16 @@
       "name": "spawnTimer",
       "type": "number",
       "value": 1.5
+    },
+    {
+      "name": "Variable2",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "invincible",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -232,7 +242,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "NewSprite",
+      "name": "Cloud",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -692,6 +702,66 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Apple",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "golden-apple-hand-drawn-cartoon-style-illustration-ai-generated-free-png.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 196,
+                        "y": 127
+                      },
+                      {
+                        "x": 779,
+                        "y": 127
+                      },
+                      {
+                        "x": 779,
+                        "y": 836
+                      },
+                      {
+                        "x": 196,
+                        "y": 836
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -707,7 +777,7 @@
         "objectName": "NewText"
       },
       {
-        "objectName": "NewSprite"
+        "objectName": "Cloud"
       },
       {
         "objectName": "Background"
@@ -717,6 +787,9 @@
       },
       {
         "objectName": "wind"
+      },
+      {
+        "objectName": "Apple"
       },
       {
         "objectName": "sun"
@@ -752,7 +825,7 @@
             "value": "PickNearest"
           },
           "parameters": [
-            "NewSprite",
+            "Cloud",
             "racer.X()",
             "racer.Y()",
             ""
@@ -767,7 +840,7 @@
           "parameters": [
             "racer",
             "=",
-            "lerp(racer.Y(), NewSprite.Y(), 0.2)"
+            "lerp(racer.Y(), Cloud.Y(), 0.2)"
           ]
         }
       ]
@@ -824,7 +897,7 @@
           },
           "parameters": [
             "",
-            "NewSprite",
+            "Cloud",
             "racer.X() + 30",
             "racer.Y() + RandomInRange(-130, 130)",
             ""
@@ -835,7 +908,7 @@
             "value": "ScalableCapability::ScalableBehavior::SetValue"
           },
           "parameters": [
-            "NewSprite",
+            "Cloud",
             "Scale",
             "=",
             "0.8"
@@ -911,6 +984,15 @@
           },
           "parameters": [
             "NewText"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"appleSpawn\""
           ]
         }
       ]
@@ -1328,6 +1410,16 @@
             "",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "invincible",
+            "=",
+            "0"
+          ]
         }
       ],
       "actions": [
@@ -1352,8 +1444,120 @@
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "Apple",
+            "\"appleSpawn\"",
+            ">=",
+            "5"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Apple",
+            "CameraX() - SceneWindowWidth() / 2 + Random(SceneWindowWidth() - obstacle.Width())",
+            "CameraY() - SceneWindowHeight()/2",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "Apple",
+            "0",
+            "100",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ScalableCapability::ScalableBehavior::SetValue"
+          },
+          "parameters": [
+            "Apple",
+            "Scale",
+            "=",
+            "0.1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "obstacle",
+            "\"appleSpawn\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "racer",
+            "Apple",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "invincible",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "Apple",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            "5"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "invincible",
+            "=",
+            "0"
+          ]
+        }
+      ]
     }
   ],
   "layers": [

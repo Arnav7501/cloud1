@@ -81,6 +81,7 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [
+      "mobile",
       "mobile"
     ],
     "extensionProperties": [],
@@ -222,6 +223,14 @@
         "kind": "image",
         "metadata": "",
         "name": "obstacle-removebg-preview.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "golden-apple-hand-drawn-cartoon-style-illustration-ai-generated-free-png.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "golden-apple-hand-drawn-cartoon-style-illustration-ai-generated-free-png.png",
         "smoothed": true,
         "userAdded": false
       }
