@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 245,
+    "build": 247,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -80,7 +80,9 @@
     "authorIds": [],
     "authorUsernames": [],
     "categories": [],
-    "playableDevices": [],
+    "playableDevices": [
+      "mobile"
+    ],
     "extensionProperties": [],
     "platforms": [
       {
@@ -206,9 +208,24 @@
         "name": "download-yellow-sun-illustration-icon-png-701751694973584fguxalwija-removebg-preview2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "obstacle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "obstacle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "obstacle-removebg-preview.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "obstacle-removebg-preview.png",
+        "smoothed": true,
+        "userAdded": false
       }
-    ],
-    "resourceFolders": []
+    ]
   },
   "objects": [],
   "objectsFolderStructure": {
