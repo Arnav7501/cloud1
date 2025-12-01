@@ -44,7 +44,7 @@
     {
       "name": "spawnTimer",
       "type": "number",
-      "value": 1.5
+      "value": 4
     },
     {
       "name": "Variable2",
@@ -53,6 +53,21 @@
     },
     {
       "name": "invincible",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Variable3",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "gameIsOver",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Variable4",
       "type": "number",
       "value": 0
     }
@@ -68,8 +83,8 @@
       "name": "racer",
       "persistentUuid": "0218e647-1eab-4ec7-87a0-777445ee94a3",
       "width": 257,
-      "x": 258,
-      "y": -71,
+      "x": 5,
+      "y": 232,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -96,14 +111,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 321,
+      "height": 169,
       "keepRatio": true,
       "layer": "Background",
       "name": "lightning",
       "persistentUuid": "fd49c154-a875-4117-abfd-20ee38a1fbec",
-      "width": 324,
-      "x": 892,
-      "y": 469,
+      "width": 174,
+      "x": 1091,
+      "y": 566,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
@@ -113,14 +128,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 269,
+      "height": 192,
       "keepRatio": true,
       "layer": "Background",
       "name": "wind",
       "persistentUuid": "9d3aebb6-7ee8-448d-b576-11bb0c191193",
-      "width": 227,
-      "x": 472,
-      "y": 473,
+      "width": 190,
+      "x": 240,
+      "y": 551,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -130,14 +145,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 244,
+      "height": 186,
       "keepRatio": true,
       "layer": "Background",
       "name": "sun",
       "persistentUuid": "fe681235-6ed0-4f7e-aad3-33b8dd3bba44",
-      "width": 218,
-      "x": 112,
-      "y": 488,
+      "width": 193,
+      "x": 12,
+      "y": 548,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -167,12 +182,29 @@
       "height": 456,
       "keepRatio": true,
       "layer": "Background",
-      "name": "NewText",
+      "name": "GameOverText",
       "persistentUuid": "14cec6e7-b5f2-4542-a848-d596c7d95dda",
       "width": 716,
       "x": 418,
       "y": 271,
       "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 228,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "reset",
+      "persistentUuid": "625a1808-a94e-48fb-a6b1-7c0df7bb1671",
+      "width": 229,
+      "x": 860,
+      "y": 529,
+      "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -664,14 +696,14 @@
       "assetStoreId": "",
       "bold": false,
       "italic": false,
-      "name": "NewText",
+      "name": "GameOverText",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Game Over",
+      "string": "",
       "font": "",
       "textAlignment": "left",
       "characterSize": 70,
@@ -694,7 +726,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Game Over",
+        "text": "",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -762,6 +794,77 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "reset",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "resetActive",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "=resetActive",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drivingWheel-removebg-preview.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 86,
+                        "y": 86
+                      },
+                      {
+                        "x": 406,
+                        "y": 86
+                      },
+                      {
+                        "x": 406,
+                        "y": 406
+                      },
+                      {
+                        "x": 86,
+                        "y": 406
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -774,7 +877,7 @@
         "objectName": "lightning"
       },
       {
-        "objectName": "NewText"
+        "objectName": "GameOverText"
       },
       {
         "objectName": "Cloud"
@@ -796,27 +899,13 @@
       },
       {
         "objectName": "obstacle"
+      },
+      {
+        "objectName": "reset"
       }
     ]
   },
   "events": [
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "AddForceAL"
-          },
-          "parameters": [
-            "racer",
-            "0",
-            "200",
-            ""
-          ]
-        }
-      ]
-    },
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
@@ -830,6 +919,16 @@
             "racer.Y()",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "0"
+          ]
         }
       ],
       "actions": [
@@ -840,7 +939,7 @@
           "parameters": [
             "racer",
             "=",
-            "lerp(racer.Y(), Cloud.Y(), 0.2)"
+            "lerp(racer.Y(), Cloud.Y()-30, 0.4)"
           ]
         }
       ]
@@ -860,18 +959,6 @@
             "",
             "0"
           ]
-        },
-        {
-          "type": {
-            "value": "SetCameraCenterY"
-          },
-          "parameters": [
-            "",
-            "=",
-            "racer.Y()+150",
-            "",
-            "0"
-          ]
         }
       ]
     },
@@ -888,9 +975,29 @@
             ">=",
             "cloudSpawningRate"
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "0"
+          ]
         }
       ],
       "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "newCloudY",
+            "=",
+            "lastCloudY+RandomInRange(-50,50)"
+          ]
+        },
         {
           "type": {
             "value": "Create"
@@ -898,8 +1005,8 @@
           "parameters": [
             "",
             "Cloud",
-            "racer.X() + 30",
-            "racer.Y() + RandomInRange(-130, 130)",
+            "racer.X() + 60",
+            "newCloudY",
             ""
           ]
         },
@@ -922,6 +1029,16 @@
             "",
             "\"cloudspawn\""
           ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "lastCloudY",
+            "=",
+            "Cloud.Y()"
+          ]
         }
       ]
     },
@@ -938,6 +1055,17 @@
         }
       ],
       "actions": [
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "racer",
+            "0",
+            "200",
+            "1"
+          ]
+        },
         {
           "type": {
             "value": "ResetTimer"
@@ -983,7 +1111,7 @@
             "value": "Cache"
           },
           "parameters": [
-            "NewText"
+            "GameOverText"
           ]
         },
         {
@@ -993,6 +1121,16 @@
           "parameters": [
             "",
             "\"appleSpawn\""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "lastCloudY",
+            "=",
+            "CameraY()"
           ]
         }
       ]
@@ -1094,13 +1232,21 @@
       "actions": [
         {
           "type": {
+            "value": "Arreter"
+          },
+          "parameters": [
+            "racer"
+          ]
+        },
+        {
+          "type": {
             "value": "AddForceAL"
           },
           "parameters": [
             "racer",
-            "180",
+            "0",
             "100",
-            ""
+            "1"
           ]
         },
         {
@@ -1110,7 +1256,18 @@
           "parameters": [
             "cloudSpawningRate",
             "=",
-            "2.5"
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "wind",
+            "windActive",
+            "=",
+            "0"
           ]
         }
       ]
@@ -1133,13 +1290,32 @@
       "actions": [
         {
           "type": {
+            "value": "Arreter"
+          },
+          "parameters": [
+            "racer"
+          ]
+        },
+        {
+          "type": {
             "value": "AddForceAL"
           },
           "parameters": [
             "racer",
             "0",
             "400",
-            ""
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "sun",
+            "sunVariable",
+            "=",
+            "0"
           ]
         }
       ]
@@ -1198,7 +1374,7 @@
           "parameters": [
             "cloudSpawningRate",
             "=",
-            "0.5"
+            "0.6"
           ]
         }
       ]
@@ -1216,6 +1392,16 @@
             ">=",
             "spawnTimer"
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "0"
+          ]
         }
       ],
       "actions": [
@@ -1226,7 +1412,7 @@
           "parameters": [
             "",
             "obstacle",
-            "CameraX() - SceneWindowWidth() / 2 + Random(SceneWindowWidth() - obstacle.Width())",
+            "racer.X() + 800 + Random(300)",
             "CameraY() - SceneWindowHeight()/2",
             ""
           ]
@@ -1237,7 +1423,7 @@
           },
           "parameters": [
             "obstacle",
-            "0",
+            "50",
             "100",
             "1"
           ]
@@ -1276,25 +1462,23 @@
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "racer",
-            "obstacle",
-            "",
-            "",
-            ""
-          ]
-        }
-      ],
+      "conditions": [],
       "actions": []
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "0"
+          ]
+        }
+      ],
       "actions": [
         {
           "type": {
@@ -1304,7 +1488,7 @@
             "Score",
             "Text",
             "=",
-            "\"Time elapsed: \" + ToString(floor(TimerElapsedTime(\"gameTime\")))"
+            "\"Score: \" + ToString(floor(TimerElapsedTime(\"gameTime\")))"
           ]
         }
       ]
@@ -1371,6 +1555,15 @@
             "=",
             "1"
           ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"Left\""
+          ]
         }
       ],
       "actions": [
@@ -1425,6 +1618,16 @@
       "actions": [
         {
           "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
             "value": "Arreter"
           },
           "parameters": [
@@ -1436,8 +1639,45 @@
             "value": "Montre"
           },
           "parameters": [
-            "NewText",
+            "GameOverText",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "racer"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "GameOverText",
+            "Text",
+            "=",
+            "\"Game over! Your score was \" + ToString(floor(TimerElapsedTime(\"gameTime\")))"
+          ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "obstacle"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "invincible",
+            "=",
+            "1"
           ]
         }
       ]
@@ -1454,6 +1694,16 @@
             "\"appleSpawn\"",
             ">=",
             "5"
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "gameIsOver",
+            "=",
+            "0"
           ]
         }
       ],
@@ -1555,6 +1805,156 @@
             "invincible",
             "=",
             "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SourisSurObjet"
+          },
+          "parameters": [
+            "reset",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"Left\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "reset",
+            "resetActive",
+            "=",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberObjectVariable"
+          },
+          "parameters": [
+            "reset",
+            "resetActive",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Arreter"
+          },
+          "parameters": [
+            "racer"
+          ]
+        },
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "racer",
+            "0",
+            "200",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "cloudSpawningRate",
+            "=",
+            "1.5"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberObjectVariable"
+          },
+          "parameters": [
+            "reset",
+            "resetActive",
+            "=",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PosY"
+          },
+          "parameters": [
+            "Cloud",
+            "<",
+            "50"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "lastCloudY",
+            "=",
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PosY"
+          },
+          "parameters": [
+            "Cloud",
+            ">",
+            "300"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "lastCloudY",
+            "=",
+            "300"
           ]
         }
       ]

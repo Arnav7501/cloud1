@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 247,
+    "build": 248,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -233,6 +233,22 @@
         "name": "golden-apple-hand-drawn-cartoon-style-illustration-ai-generated-free-png.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "drivingWheel.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drivingWheel.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "drivingWheel-removebg-preview.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drivingWheel-removebg-preview.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -245,7 +261,17 @@
     {
       "name": "cloudSpawningRate",
       "type": "number",
-      "value": 1
+      "value": 1.5
+    },
+    {
+      "name": "lastCloudY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "newCloudY",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
